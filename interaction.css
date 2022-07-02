@@ -106,7 +106,7 @@ footer>span {
 .left-side {
     max-width: 57%;
     width: 57%;
-    background-image: url('./img/lohp_en_1302x955.png');
+    background-image: url('.lohp_en_1302x955.png');
     background-size: cover;
     background-position: center;
     display: flex;
