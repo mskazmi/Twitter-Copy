@@ -7,8 +7,7 @@ html, body {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+    display: block;
 }
 
 footer, a {
@@ -46,7 +45,7 @@ footer, a {
     margin-right: 5px;
 }
 
-.signup {
+.sign-up {
     background: rgb(29, 155, 240);
     display: flex;
     color: white;
@@ -109,7 +108,7 @@ footer>span {
 .left-side {
     max-width: 54.3%;
     width: 54.3%;
-    background-image: url('https://mskazmi.github.io/Twitter-Copy/lohp_en_1302x955.png');
+    background-image: url('./img/lohp_en_1302x955.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -179,3 +178,280 @@ footer {
     background-color: black;
 }
 
+#mainArea {
+    background-color: black;
+    display: flex;
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 454px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 80px;
+}
+
+#mainArea h1 {
+    padding: 20px;
+    padding-left: 0;
+    margin-top: -20px;
+    font-size: xx-large;
+    justify-content: left;
+}
+
+.blocked
+{
+    position:relative;
+}
+.blocked:after
+{
+    content: '';
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:1;
+    background: transparent;
+}
+
+.input {
+    outline: none;
+    width: 438px;
+    height: 56px;
+    background-color: black;
+    border: 1px solid rgb(75, 74, 74);
+    border-radius: 5px;
+    color: white;
+}
+
+.input {
+    padding: 15px 0px 0px 5px;
+}
+
+.input:focus {
+    outline: none;
+    border: 2px solid rgb(29, 155, 240); 
+}
+
+#nameLabel {
+    color: gray;
+    font-size: large;
+    margin-top: -35px;
+    margin-left: 10px;
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    border: none;
+}
+
+#counter {
+    display: none;
+    position: fixed;
+    font-size: small;
+    color: gray;
+    margin-top: -51px;
+    margin-left: 440px;
+    padding-right: 5px;
+}
+
+#counterNum {
+    display: inline-block;
+    color: gray;
+    font-size: small;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.orEmail {
+    background: none;
+    width: 150px;
+    margin-left: 300px;
+    margin-top: 15px;
+    color:rgb(29, 155, 240);
+}
+
+.orEmail:focus {
+    outline: none;
+}
+
+.orEmail:hover {
+    text-decoration: underline;
+}
+
+.birthTitle {
+    margin-top: 10px;
+}
+
+.birthFooter {
+    font-size: small;
+    margin-top: 5px;
+    color: gray;
+}
+
+.allSelects {
+    display: flex;
+}
+
+.flex-gap {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.flex-gap > div {
+    margin: 4px;
+}
+
+select {
+    background: black;
+    border: 1px solid rgb(75, 74, 74);
+    border-radius: 3px;
+}
+
+.select {
+    margin-top: 20px;
+}
+
+.arrow {
+    position: absolute;
+    margin-left: -35px;
+    margin-top: 15px;
+    width: 25px;
+    height: 25px;
+    color: red;
+}
+
+.tag {
+    font-size: small;
+    position: fixed;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.dayTag {
+    margin-left: 30px;
+}
+
+.month {
+    width: 208px;
+    height: 58px;
+    color: white;
+}
+
+.day {
+    width: 91px;
+    height: 58px;
+    color: white;
+}
+
+.year {
+    width: 115px;
+    height: 58px;
+    color: white;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    
+}  
+
+.yearTag {
+    margin-left: 30px;
+}
+
+.select {
+    color: gray;
+}
+
+option {
+    color: white;
+}
+
+#errorMsg {
+    display: none;
+    position: relative;
+    margin-left: 5px;
+    font-size: small;
+    color: red;
+}
+
+.phoneInput {
+    margin-top: 25px;
+}
+
+.closeBar {
+    width: 600px;
+    height: 63px;
+    border-radius: 15px 15px 0 0;
+    background: black;
+    display: block;
+    margin-top: -60px;
+    margin-left: -80px;
+}
+
+.x-symbol {
+    width: 20px;
+    height: 20px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.x-button {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: rgba(128, 128, 128, 0.5);
+    opacity: 0%;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.x-button:hover {
+    border: none;
+    background-color: rgba(128, 128, 128, 0.5);
+    opacity: 100%;
+    transition-duration: .2s;
+}
+
+.step {
+    font-size: 20px;
+    font-weight: 600;
+    display: inline-block;
+    position: absolute;
+    margin-left: 35px;
+    margin-top: 9px;
+}
+
+.nextBar {
+    width: 600px;
+    height: 100px;
+    background-color: black;
+    display: block;
+    margin-top: 59.6px;
+    margin-left: -80px;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.nextButton {
+    border: none;
+    width: 440px;
+    border-radius: 25px;
+    background-color: rgb(239, 243, 244);
+    margin-left: 80px;
+    margin-top: 20px;
+    font-weight: 700;
+    padding: 14px;
+}
+
+.nextButton:disabled {
+    border: none;
+    background-color: gray;
+    text-decoration: none;
+    color: black;
+}
