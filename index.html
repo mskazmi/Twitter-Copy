@@ -5,14 +5,12 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Twitter. It's what's happening</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='interaction.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src='main.js'></script>
 </head>
 <body>
-    <div class="main" style="height: 100vh; display: flex">
-        <div class="left-side">
+    <div class="main blur" style="height: 100vh; display: flex">
+        <div class="left-side blur">
             <svg viewBox="0 0 24 24" style="width: 375px" aria-hidden="true" class="r-jwli3a r-4qtqp9 r-yyyyoo r-rxcuwo r-1777fci r-m327ed r-dnmrzs r-494qqr r-bnwqim r-1plcrui r-lrvibr">
                 <g>
                     <path fill="#ffffff" d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path>
@@ -40,14 +38,148 @@
             <div class="break">
                 <div class="rightBr"></div> or <div class="leftBr"></div>
             </div>
-            <button class="signup">Sign up with phone or email</button>
+            <button class="sign-up">Sign up with phone or email</button>
             <div class="policy">By signing up, you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>, including <a href="#">Cookie Use.</a></div>
             <span class="heading3">Already have an account?</span>
-            <button class="signin-Button">Sign in</button>
+            <button class="signin-Button">Sign in</button>       
         </div>
     </div>
+    <div>
+        <div id="mainArea" style="display: none;" onchange="enableNextButton()">
+            <div class="closeBar">
+                <button class="x-button"></button>
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="x-symbol" style="color: rgb(239, 243, 244);">
+                    <g><path fill="#ffffff" d="M13.414 12l5.793-5.793c.39-.39.39-1.023 0-1.414s-1.023-.39-1.414 0L12 10.586 6.207 4.793c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414L10.586 12l-5.793 5.793c-.39.39-.39 1.023 0 1.414.195.195.45.293.707.293s.512-.098.707-.293L12 13.414l5.793 5.793c.195.195.45.293.707.293s.512-.098.707-.293c.39-.39.39-1.023 0-1.414L13.414 12z"></path>
+                    </g>
+                </svg>
+                <div class="step">Step 1 of 5</div>
+            </div>
+            <h1>Create your account</h1>
+            <input type="text" onfocusout="defaultBorder()" onfocus="focusLabel()" oninput="checkEmpty(), counterChange(), counter(), nameSet()" class="input nameInput">
+            <div id="nameLabel">Name</div>
+            <div id="counter"> <div id="counterNum"></div>/ 50</div>
+            <div id="errorMsg">What's your name?</div>
+            <input type="text" onfocusout="phoneDefaultBorder()" onfocus="focusPhoneLabel()" oninput="phoneSet()" class="input phoneInput">
+            <div id="nameLabel" class="phoneLabel">Phone</div>
+            <button class="orEmail">Use email instead</button>
+            <div class="birthTitle">Date of birth</div>
+            <div class="birthFooter">This will not be shown publicly. Confirm your own age, even if this <br>account is for a business, a pet, or something else.</div>
+            <div class="allSelects flex-gap">
+                <div class="select">
+                    <span class="tag">Month</span>
+                    <select class="month" onchange="monthSet()">
+                        <option value="0"></option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow">
+                        <g>
+                            <path fill="rgb(74, 75, 75)" d="M20.207 8.147c-.39-.39-1.023-.39-1.414 0L12 14.94 5.207 8.147c-.39-.39-1.023-.39-1.414 0-.39.39-.39 1.023 0 1.414l7.5 7.5c.195.196.45.294.707.294s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.022 0-1.413z"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="select">
+                    <span class="tag dayTag">Day</span>
+                    <select class="day" onchange="daySet()">
+                        <option value="0"></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow">
+                        <g>
+                            <path fill="rgb(74, 75, 75)" d="M20.207 8.147c-.39-.39-1.023-.39-1.414 0L12 14.94 5.207 8.147c-.39-.39-1.023-.39-1.414 0-.39.39-.39 1.023 0 1.414l7.5 7.5c.195.196.45.294.707.294s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.022 0-1.413z"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="select">
+                    <span class="tag yearTag">Year</span>
+                    <select class="year" onchange="yearSet()">
+                        <option value="0"></option>
+                        <option value="1">2021</option>
+                        <option value="2">2020</option>
+                        <option value="3">2019</option>
+                        <option value="4">2018</option>
+                        <option value="5">2017</option>
+                        <option value="6">2016</option>
+                        <option value="7">2015</option>
+                        <option value="8">2014</option>
+                        <option value="9">2013</option>
+                        <option value="10">2012</option>
+                        <option value="11">2011</option>
+                        <option value="12">2010</option>
+                        <option value="13">2009</option>
+                        <option value="14">2008</option>
+                        <option value="15">2007</option>
+                        <option value="16">2006</option>
+                        <option value="17">2005</option>
+                        <option value="18">2004</option>
+                        <option value="19">2003</option>
+                        <option value="20">2002</option>
+                        <option value="21">2001</option>
+                        <option value="22">2000</option>
+                        <option value="23">1999</option>
+                        <option value="24">1998</option>
+                        <option value="25">1997</option>
+                        <option value="26">1996</option>
+                        <option value="27">1995</option>
+                        <option value="28">1994</option>
+                        <option value="29">1993</option>
+                        <option value="30">1992</option>
+                        <option value="31">1991</option>
+                    </select>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow">
+                        <g>
+                            <path fill="rgb(74, 75, 75)" d="M20.207 8.147c-.39-.39-1.023-.39-1.414 0L12 14.94 5.207 8.147c-.39-.39-1.023-.39-1.414 0-.39.39-.39 1.023 0 1.414l7.5 7.5c.195.196.45.294.707.294s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.022 0-1.413z"></path>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div class="nextBar">
+                <button class="nextButton" disabled="true">Next</button>
+            </div>
+        </div> 
+    </div>
 
-    <footer>
+    <footer class="blur">
         <a href="#"><span>About</span></a>
         <a href="#"><span>Help Center</span></a>
         <a href="#"><span>Terms of Service</span></a>
@@ -67,5 +199,9 @@
         <a href="#"><span>Settings</span></a>
         <span>&#169 2022 Twitter, Inc.</span>
     </footer>
+    <script src='signup.js'></script>
+
 </body>
+
 </html>
+
